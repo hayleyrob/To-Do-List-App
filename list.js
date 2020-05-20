@@ -4,10 +4,11 @@ class List {
         this.addItems = (item) => {
             this.items.push(item)
         }
-
+    
     }
 
 
 
 
 }
+module.exports = List

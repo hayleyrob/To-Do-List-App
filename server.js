@@ -4,9 +4,17 @@ const app = express()
 
 app.use(express.static(join(__dirname, 'public')))
 
-app.get('/Public', (req, res) => {
-    res.send('Hello')
+const List = require('./list.js')
+
+const list = new List()
+// routes
+
+app.post('/TODO', (req, res) => {
+    list.addItems(req.body)
+    res.sendStatus(200)
 })
+
+
 
 
 app.listen(3000, () => console.log('http://localhost:3000'))
